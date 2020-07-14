@@ -17,6 +17,32 @@ http
   .createServer(function(req, res) {
     let url = req["url"];
     switch (true) {
+      case /db$/.test(url):
+        const sqlite3 = require("sqlite3").verbose();
+        const db = new sqlite3.Database("test.db");
+        console.log("<table>");
+        db.serialize(() => {
+          db.each("SELECT id, 都道府県, 人口 FROM example;", (error, row) => {
+            if (error) {
+              console.log("Error: ", error);
+              return;
+            }
+            console.log("<tr>");
+            console.log(
+              "<td>" +
+                row.id +
+                "</td><td>" +
+                row.都道府県 +
+                "</td><td>" +
+                row.人口 +
+                "</td>"
+            );
+            console.log("</tr>");
+          });
+        });
+        db.close();
+        console.log("</table>");
+        break;
       case /counter$/.test(url):
         count++;
         res.write(
