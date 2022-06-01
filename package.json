@@ -10,8 +10,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "sqlite3": "^4.2.0",
-    "nodemon": "1.18.4",
-    "dot-prop": ">=5.1.1"
+    "sqlite3": "",
+    "nodemon": "",
+    "dot-prop": ""
   }
 }
