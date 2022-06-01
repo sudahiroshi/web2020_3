@@ -10,6 +10,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "express": "",
+    "jes": "",
     "sqlite3": "",
     "nodemon": "",
     "dot-prop": ""
